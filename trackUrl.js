@@ -2,7 +2,7 @@ window.addEventListener("locationchange", function() {
   let location = window.location.href;
   let params = new URLSearchParams(window.location.search);
   let aidVal = params.get("aid");
-  if (aidVal === "00000000") {
+  if (aidVal != undefined && aidVal != "" && aidVal != null) {
     fetch("https://9hp43o3p3k.execute-api.us-east-2.amazonaws.com/dev/task", {
       method: "POST",
       headers: {
