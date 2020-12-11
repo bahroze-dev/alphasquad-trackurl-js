@@ -1,16 +1,19 @@
 window.addEventListener("locationchange", function() {
-  let location = window.location.href;
+  // let location = window.location.href;
   let params = new URLSearchParams(window.location.search);
   let aidVal = params.get("aid");
   if (aidVal != undefined && aidVal != "" && aidVal != null) {
-    fetch("https://9hp43o3p3k.execute-api.us-east-2.amazonaws.com/dev/task", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json"
-        // 'Content-Type': 'application/x-www-form-urlencoded',
-      },
-      body: JSON.stringify({ location: location })
-    })
+    fetch(
+      "https://omo7pv37lg.execute-api.us-east-2.amazonaws.com/dev/lead/data",
+      {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json"
+          // 'Content-Type': 'application/x-www-form-urlencoded',
+        },
+        body: JSON.stringify({ aidval: aidVal })
+      }
+    )
       .then(res => {
         return res.json();
       })
