@@ -4,14 +4,14 @@ window.addEventListener("locationchange", function() {
   let aidVal = params.get("aid");
   if (aidVal != undefined && aidVal != "" && aidVal != null) {
     fetch(
-      "https://omo7pv37lg.execute-api.us-east-2.amazonaws.com/dev/lead/data",
+      "https://kyeqluec27.execute-api.us-east-1.amazonaws.com/dev/lead/receiveAID",
       {
         method: "POST",
         headers: {
           "Content-Type": "application/json"
           // 'Content-Type': 'application/x-www-form-urlencoded',
         },
-        body: JSON.stringify({ aidval: aidVal })
+        body: JSON.stringify({ aid: aidVal })
       }
     )
       .then(res => {
